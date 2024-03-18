@@ -1,0 +1,10 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const petownerRouter = require('./routers/petowner.router');
+const treatsRouter = require('./routers/treats.router');
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/', petownerRouter);
+app.use('/', treatsRouter);
+module.exports = app;
